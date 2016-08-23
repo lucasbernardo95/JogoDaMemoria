@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Game memory </string>
+    <string name="bemvindo">Welcome to game memory </string>
+    <string name="jogador1">Player 1</string>
+    <string name="jogador2">Player 2</string>
+    <string name="jogador3">Player 3</string>
+    <string name="fechar">Close</string>
+    <string name="iniciar">Start</string>
+    <string name="numeroDeJogadores">Number of players</string>
+    <string name="jogador4">Player 4</string>
+    <string name="quantidadeDeJogadores">3</string>
+    <string name="nomeJogador">Player</string>
+    <string name="fimDeJogo">Game over!</string>
+    <string name="jogarNovamente">Play again!</string>
+    <string name="novoJogo">New game</string>
+    <string name="placar">The current score is</string>
+    <string name="sair"> Get out</string>
+    <string name="vencedor"> winer!</string>
+</resources>

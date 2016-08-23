@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">Jogo da memoria</string>
+    <string name="bemvindo">Bem-vindo ao jogo da memória!</string>
+    <string name="jogador1">Jogador 1</string>
+    <string name="jogador2">Jogador 2</string>
+    <string name="jogador3">Jogador 3</string>
+    <string name="jogador4">Jogador 4</string>
+    <string name="iniciar">Iniciar</string>
+    <string name="fechar">Fechar</string>
+    <string name="numeroDeJogadores">Número de jogadores:</string>
+    <string name="quantidadeDeJogadores">3</string>
+    <string name="nomeJogador">Jogador: </string>
+    <string name="fimDeJogo">Fim do jogo!</string>
+    <string name="vencedor">jogador..., venceu!</string>
+    <string name="placar">O placar atual é </string>
+    <string name="jogarNovamente">JOGAR NOVAMENTE</string>
+    <string name="novoJogo">NOVO JOGO</string>
+    <string name="sair">SAIR</string>
+</resources>

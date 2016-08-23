@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="br.com.eaj.ufrn.lucas.jogodamemoria.fimDeJogoActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="@string/fimDeJogo"
+        android:id="@+id/textView4"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="@string/vencedor"
+        android:id="@+id/textViewNomeVencedor"
+        android:layout_below="@+id/textView4"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="42dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="@string/placar"
+        android:id="@+id/textViewPlacarFinal"
+        android:layout_marginTop="60dp"
+        android:layout_below="@+id/textViewNomeVencedor"
+        android:layout_toStartOf="@+id/textView4" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/jogarNovamente"
+        android:id="@+id/buttonJogarNovamente"
+        android:layout_below="@+id/textViewPlacarFinal"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="110dp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/novoJogo"
+        android:id="@+id/buttonNovoJogo"
+        android:layout_below="@+id/buttonJogarNovamente"
+        android:layout_alignEnd="@+id/buttonJogarNovamente"
+        android:layout_alignStart="@+id/buttonJogarNovamente" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/sair"
+        android:id="@+id/buttonSair"
+        android:layout_below="@+id/buttonNovoJogo"
+        android:layout_alignStart="@+id/buttonNovoJogo"
+        android:layout_alignEnd="@+id/buttonJogarNovamente" />
+</RelativeLayout>
