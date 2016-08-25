@@ -11,39 +11,23 @@
     tools:context="br.com.eaj.ufrn.lucas.jogodamemoria.gameActivity">
 
     <TableRow>
-        <ImageButton android:src="@drawable/azir"/>
-        <ImageButton android:src="@drawable/ilaoi"/>
-        <ImageButton android:src="@drawable/ekko"/>
-        <ImageButton android:src="@drawable/jax"/>
-        <ImageButton android:src="@drawable/azir"/>
+        <ImageButton android:src="@drawable/interrogacao"/>
+        <ImageButton android:src="@drawable/interrogacao"/>
+        <ImageButton android:src="@drawable/interrogacao"/>
+        <ImageButton android:src="@drawable/interrogacao"/>
+        <ImageButton android:src="@drawable/interrogacao"/>
     </TableRow>
     <TableRow>
-        <ImageButton android:src="@drawable/lucian"/>
-        <ImageButton android:src="@drawable/maokai"/>
-        <ImageButton android:src="@drawable/ryze"/>
-        <ImageButton android:src="@drawable/swain"/>
-        <ImageButton android:src="@drawable/ilaoi"/>
+
     </TableRow>
     <TableRow>
-        <ImageButton android:src="@drawable/taliyah"/>
-        <ImageButton android:src="@drawable/kindred"/>
-        <ImageButton android:src="@drawable/velkoz"/>
-        <ImageButton android:src="@drawable/coringa"/>
-        <ImageButton android:src="@drawable/ekko"/>
+
     </TableRow>
     <TableRow>
-        <ImageButton android:src="@drawable/jax"/>
-        <ImageButton android:src="@drawable/lucian"/>
-        <ImageButton android:src="@drawable/maokai"/>
-        <ImageButton android:src="@drawable/ryze"/>
-        <ImageButton android:src="@drawable/swain"/>
+
     </TableRow>
     <TableRow>
-        <ImageButton android:src="@drawable/taliyah"/>
-        <ImageButton android:src="@drawable/kindred"/>
-        <ImageButton android:src="@drawable/velkoz"/>
-        <ImageButton android:src="@drawable/tryndamere"/>
-        <ImageButton android:src="@drawable/tryndamere"/>
+
     </TableRow>
 
     <LinearLayout

@@ -38,11 +38,11 @@ public class SelecaoJogadoresActivity extends AppCompatActivity {
                 if (progresso <= 2) {
                     ativaJogador = (EditText) findViewById(R.id.editTjogador3);
                     ativaJogador.setVisibility(View.INVISIBLE);
-                    ((EditText) findViewById(R.id.editTjogador4)).setText("");
+                    ((EditText) findViewById(R.id.editTjogador3)).setText("");
                 } else {
                     ativaJogador = (EditText) findViewById(R.id.editTjogador3);
                     ativaJogador.setVisibility(View.VISIBLE);
-                    ((EditText) findViewById(R.id.editTjogador4)).setText(R.string.jogador4);
+                    ((EditText) findViewById(R.id.editTjogador3)).setText(R.string.jogador3);
                 }
                 if (progresso <= 3) {
                     ativaJogador = (EditText) findViewById(R.id.editTjogador4);
@@ -73,10 +73,10 @@ public class SelecaoJogadoresActivity extends AppCompatActivity {
         List<Jogador> jogador = new ArrayList();
         Jogador play;
 
-        //Testa se os nome dos jogadores são diferentes de nulos e recebe os nomes
         //Testa se pelo menos dois dos jogadores tem um nome
-        if ( (!nome1.equals("") && !nome2.equals("")) && (!nome3.equals("") || !nome4.equals("")) ){
+        if ( !nome1.equals("") && !nome2.equals("") ){
 
+            //Testa se os nome dos jogadores são diferentes de nulos e recebe os nomes
             if(!nome1.equals("")) {
                 play = new Jogador();
                 play.setNomeJogador(nome1);
