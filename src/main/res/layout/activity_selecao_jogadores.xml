@@ -35,18 +35,18 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="@string/quantidadeDeJogadores"
-        android:id="@+id/textView3"
+        android:id="@+id/textSeekbar"
         android:layout_below="@+id/textView2"
         android:layout_alignParentStart="true" />
 
     <SeekBar
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/seekBar"
-        android:layout_alignBottom="@+id/textView3"
-        android:layout_alignStart="@+id/textView"
-        android:max="4"
-        android:indeterminate="false" />
+        android:indeterminate="false"
+        android:max="2"
+        android:layout_alignBottom="@+id/textSeekbar"
+        android:layout_alignStart="@+id/textView" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -98,7 +98,8 @@
         android:text="@string/iniciar"
         android:id="@+id/buttonIniciar"
         android:layout_below="@+id/editTjogador4"
-        android:layout_alignEnd="@+id/textView2" />
+        android:layout_alignEnd="@+id/textView2"
+        android:onClick="iniciar"/>
 
     <Button
         android:layout_width="wrap_content"
