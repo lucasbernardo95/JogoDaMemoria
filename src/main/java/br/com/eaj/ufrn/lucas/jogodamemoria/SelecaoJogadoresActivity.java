@@ -67,6 +67,7 @@ public class SelecaoJogadoresActivity extends AppCompatActivity {
 
     protected void iniciar(View view){
 
+
         String nome1 = ((EditText) findViewById(R.id.editTjogador1)).getText().toString();
         String nome2 = ((EditText) findViewById(R.id.editTjogador2)).getText().toString();
         String nome3 = ((EditText) findViewById(R.id.editTjogador3)).getText().toString();
@@ -78,36 +79,41 @@ public class SelecaoJogadoresActivity extends AppCompatActivity {
         //Testa se pelo menos dois dos jogadores tem um nome
         if ( !nome1.equals("") && !nome2.equals("") ){
 
-            int quantidadeJogadores;
+            // Após pegar os nomes dos jogadores e instanciá-los, eles serão adicionados a um bundle e passados em uma intent para a próxima activity
+            Intent intent = new Intent(SelecaoJogadoresActivity.this, gameActivity.class);//informo o contexto da tela atual e informo qual tela eu quero abrir
+            Bundle bundle = new Bundle();
+
+            //representa a quantidade de jogadores com nomes válidos
+            int quantidadeJogadores = 0;
+
             //Testa se os nome dos jogadores são diferentes de nulos e recebe os nomes
             if(!nome1.equals("")) {
                 play = new Jogador();
                 play.setNomeJogador(nome1);
                 jogador.add(play);
+                bundle.putString("nome1", nome1);
+                quantidadeJogadores++;
             } if(!nome2.equals("")) {
                 play = new Jogador();
                 play.setNomeJogador(nome2);
                 jogador.add(play);
+                bundle.putString("nome2", nome2);
+                quantidadeJogadores++;
             } if(!nome3.equals("")) {
                 play = new Jogador();
                 play.setNomeJogador(nome3);
                 jogador.add(play);
+                bundle.putString("nome3", nome3);
+                quantidadeJogadores++;
             } if(!nome4.equals("")) {
                 play = new Jogador();
                 play.setNomeJogador(nome4);
                 jogador.add(play);
+                bundle.putString("nome4", nome4);
+                quantidadeJogadores++;
             }
             Log.i("i", nome1 + nome2 + nome3 + nome4);
-
-            // Após pegar os nomes dos jogadores e instanciá-los, eles serão adicionados a um bundle e passados em uma intent para a próxima activity
-            Intent intent = new Intent(SelecaoJogadoresActivity.this, gameActivity.class);//informo o contexto da tela atual e informo qual tela eu quero abrir
-            Bundle bundle = new Bundle();
-
-            //adiciona os nomes ao bundle
-            bundle.putString("nome1", nome1);
-            bundle.putString("nome2", nome2);
-            bundle.putString("nome3", nome3);
-            bundle.putString("nome4", nome4);
+            bundle.putString("quantidade", ""+quantidadeJogadores);//adiciona no pacote a quantidade de jogadores
 
             //Adiciona o bundle à intent
             intent.putExtras(bundle);
