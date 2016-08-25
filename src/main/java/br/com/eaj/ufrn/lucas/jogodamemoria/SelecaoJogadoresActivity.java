@@ -5,9 +5,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.SeekBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -33,7 +35,7 @@ public class SelecaoJogadoresActivity extends AppCompatActivity {
             // Esse método irá setar o valor em tempo real do seekbar ao textview
             @Override
             public void onProgressChanged(SeekBar seekBar, int progresso, boolean b) {
-                progresso = progresso + 2;
+                progresso =+ 2;
                 ts.setText(progresso + "");
                 if (progresso <= 2) {
                     ativaJogador = (EditText) findViewById(R.id.editTjogador3);
@@ -76,6 +78,7 @@ public class SelecaoJogadoresActivity extends AppCompatActivity {
         //Testa se pelo menos dois dos jogadores tem um nome
         if ( !nome1.equals("") && !nome2.equals("") ){
 
+            int quantidadeJogadores;
             //Testa se os nome dos jogadores são diferentes de nulos e recebe os nomes
             if(!nome1.equals("")) {
                 play = new Jogador();
@@ -112,6 +115,9 @@ public class SelecaoJogadoresActivity extends AppCompatActivity {
             //Inicia a próxima activity passando a intent com o pacote contendo os nomes dos jogadores
             startActivity(intent);
 
+        } else {// Caso não tenha no mínimo dois jogadores com nomes exibe uma mensagem com Toast
+            // a mensagem que irá ser exibida no toast está associada a uma string no stringxml, para que seja possível a tradução também dessa mensagem em caso de mudar a linguagem
+            Toast.makeText(SelecaoJogadoresActivity.this, getResources().getString(R.string.minimoJogadores), Toast.LENGTH_LONG).show();
         }
 
     }

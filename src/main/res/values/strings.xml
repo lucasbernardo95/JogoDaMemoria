@@ -16,4 +16,5 @@
     <string name="jogarNovamente">JOGAR NOVAMENTE</string>
     <string name="novoJogo">NOVO JOGO</string>
     <string name="sair">SAIR</string>
+    <string name="minimoJogadores">A quantidade mínima de jogadores são dois</string>
 </resources>

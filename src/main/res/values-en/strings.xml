@@ -17,4 +17,5 @@
     <string name="placar">The current score is</string>
     <string name="sair"> Get out</string>
     <string name="vencedor"> winer!</string>
+    <string name="minimoJogadores">The minimum amount of players are two</string>
 </resources>
