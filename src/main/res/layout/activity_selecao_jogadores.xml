@@ -107,6 +107,7 @@
         android:text="@string/fechar"
         android:id="@+id/buttonFechar"
         android:layout_alignTop="@+id/buttonIniciar"
-        android:layout_toEndOf="@+id/buttonIniciar" />
+        android:layout_toEndOf="@+id/buttonIniciar"
+        android:onClick="fechar"/>
 
 </RelativeLayout>

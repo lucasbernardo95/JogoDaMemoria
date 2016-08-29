@@ -11,11 +11,21 @@
     tools:context="br.com.eaj.ufrn.lucas.jogodamemoria.gameActivity">
 
     <TableRow>
-        <ImageButton android:src="@drawable/interrogacao"/>
-        <ImageButton android:src="@drawable/interrogacao"/>
-        <ImageButton android:src="@drawable/interrogacao"/>
-        <ImageButton android:src="@drawable/interrogacao"/>
-        <ImageButton android:src="@drawable/interrogacao"/>
+        <ImageButton
+            android:src="@drawable/interrogacao"
+            android:id="@+id/imb1" />
+        <ImageButton
+            android:src="@drawable/interrogacao"
+            android:id="@+id/imb2" />
+        <ImageButton
+            android:src="@drawable/interrogacao"
+            android:id="@+id/imb3" />
+        <ImageButton
+            android:src="@drawable/interrogacao"
+            android:id="@+id/imb4" />
+        <ImageButton
+            android:src="@drawable/interrogacao"
+            android:id="@+id/imb5" />
     </TableRow>
     <TableRow>
         <ImageButton android:src="@drawable/interrogacao"/>

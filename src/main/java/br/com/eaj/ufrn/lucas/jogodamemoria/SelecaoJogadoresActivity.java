@@ -1,6 +1,7 @@
 package br.com.eaj.ufrn.lucas.jogodamemoria;
 
 import android.content.Intent;
+import android.os.Parcelable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -11,6 +12,7 @@ import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -35,8 +37,9 @@ public class SelecaoJogadoresActivity extends AppCompatActivity {
             // Esse método irá setar o valor em tempo real do seekbar ao textview
             @Override
             public void onProgressChanged(SeekBar seekBar, int progresso, boolean b) {
-                progresso =+ 2;
+                progresso += 2;
                 ts.setText(progresso + "");
+                Log.i("Teste", ""+progresso);
                 if (progresso <= 2) {
                     ativaJogador = (EditText) findViewById(R.id.editTjogador3);
                     ativaJogador.setVisibility(View.INVISIBLE);
@@ -67,53 +70,41 @@ public class SelecaoJogadoresActivity extends AppCompatActivity {
 
     protected void iniciar(View view){
 
-
         String nome1 = ((EditText) findViewById(R.id.editTjogador1)).getText().toString();
         String nome2 = ((EditText) findViewById(R.id.editTjogador2)).getText().toString();
         String nome3 = ((EditText) findViewById(R.id.editTjogador3)).getText().toString();
         String nome4 = ((EditText) findViewById(R.id.editTjogador4)).getText().toString();
 
-        List<Jogador> jogador = new ArrayList();
-        Jogador play;
-
         //Testa se pelo menos dois dos jogadores tem um nome
         if ( !nome1.equals("") && !nome2.equals("") ){
 
+            ArrayList<Jogador> jogadores = new ArrayList<>();
+
             // Após pegar os nomes dos jogadores e instanciá-los, eles serão adicionados a um bundle e passados em uma intent para a próxima activity
-            Intent intent = new Intent(SelecaoJogadoresActivity.this, gameActivity.class);//informo o contexto da tela atual e informo qual tela eu quero abrir
+            Intent intent = new Intent(SelecaoJogadoresActivity.this, gameActivity.class);
+
+            //informo o contexto da tela atual e informo qual tela eu quero abrir
             Bundle bundle = new Bundle();
 
             //representa a quantidade de jogadores com nomes válidos
             int quantidadeJogadores = 0;
 
-            //Testa se os nome dos jogadores são diferentes de nulos e recebe os nomes
-            if(!nome1.equals("")) {
-                play = new Jogador();
-                play.setNomeJogador(nome1);
-                jogador.add(play);
-                bundle.putString("nome1", nome1);
-                quantidadeJogadores++;
-            } if(!nome2.equals("")) {
-                play = new Jogador();
-                play.setNomeJogador(nome2);
-                jogador.add(play);
-                bundle.putString("nome2", nome2);
-                quantidadeJogadores++;
-            } if(!nome3.equals("")) {
-                play = new Jogador();
-                play.setNomeJogador(nome3);
-                jogador.add(play);
-                bundle.putString("nome3", nome3);
-                quantidadeJogadores++;
-            } if(!nome4.equals("")) {
-                play = new Jogador();
-                play.setNomeJogador(nome4);
-                jogador.add(play);
-                bundle.putString("nome4", nome4);
-                quantidadeJogadores++;
-            }
-            Log.i("i", nome1 + nome2 + nome3 + nome4);
-            bundle.putString("quantidade", ""+quantidadeJogadores);//adiciona no pacote a quantidade de jogadores
+            //Testa se os nome dos jogadores são diferentes de nulo, se for, instancia um novo jogador, passando o nome como parâmetro e adiciona ao array
+            if(!nome1.equals(""))
+                jogadores.add( new Jogador(nome1));
+
+            if(!nome2.equals(""))
+                jogadores.add( new Jogador(nome2));
+
+             if(!nome3.equals(""))
+                 jogadores.add( new Jogador(nome3));
+
+            if(!nome4.equals(""))
+                jogadores.add( new Jogador(nome4));
+
+            intent.putParcelableArrayListExtra("jogadores", jogadores);
+            //adiciona ao pacote a quantidade de jogadores
+            bundle.putString("quantidade", ""+quantidadeJogadores);
 
             //Adiciona o bundle à intent
             intent.putExtras(bundle);
@@ -125,6 +116,10 @@ public class SelecaoJogadoresActivity extends AppCompatActivity {
             // a mensagem que irá ser exibida no toast está associada a uma string no stringxml, para que seja possível a tradução também dessa mensagem em caso de mudar a linguagem
             Toast.makeText(SelecaoJogadoresActivity.this, getResources().getString(R.string.minimoJogadores), Toast.LENGTH_LONG).show();
         }
+
+    }
+
+    protected void fechar(View view){
 
     }
 
