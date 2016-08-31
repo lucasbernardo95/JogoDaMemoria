@@ -13,6 +13,7 @@ public class gameActivity extends AppCompatActivity {
 
     ArrayList<Integer> ordem; //Armazena a ordem em que os jogadores irão iniciar as jogadas
     ArrayList<Jogador> jogadores; // Armazena os jogadores
+    ArrayList<Carta> cartas; // Armazena as cartas do jogo
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,19 +31,26 @@ public class gameActivity extends AppCompatActivity {
         // Recupera o ArrayList contendo os jogadores setatos na tela de seleção
         jogadores = pacote.getParcelableArrayList("jogadores");
 
+        ordem = new ArrayList<Integer>();
         // chama o método para gerar a sequência de jogadores.
-        Jogador.gerarSequenciaJogadores(jogadores.size(), new ArrayList<Integer>());//"Teste analogia com linguagem C" passa o endereço de memória do array
+        Jogador.gerarSequenciaJogadores(jogadores.size(), ordem);
 
-        Tabuleiro.inicializarTabuleiro();
+        cartas = new ArrayList<>();
+        // Inicia a ondem em que as cartas serão geradas no tabuleiro
+        Tabuleiro.inicializarTabuleiro(cartas);
 
-        Log.i("id" , "recurso da imagem 1" + R.id.imb1);
-        Log.i("id" , "recurso da imagem 1" + R.drawable.ekko);
+        for (Carta c : cartas){
+            System.out.println("carta = " + c.getId() + " id do botão = " + c.getIdBotao());
+        }
 
     }
 
-    protected void atribuirImagensAoTabuleiro(View v){
-        ImageButton imb = (ImageButton) findViewById(R.id.imb1);
-        int id =(int ) R.id.imb1;
+    /**
+     * @param v: refere-se ao botão que está sendo clicado no xml
+     */
+
+    protected void revelarCarta(View v){
+        System.out.println("Android lixo");
     }
 
 

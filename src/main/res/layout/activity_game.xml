@@ -13,47 +13,112 @@
     <TableRow>
         <ImageButton
             android:src="@drawable/interrogacao"
-            android:id="@+id/imb1" />
+            android:id="@+id/imb1"
+            android:onClick="revelarCarta"/>
         <ImageButton
             android:src="@drawable/interrogacao"
-            android:id="@+id/imb2" />
+            android:id="@+id/imb2"
+            android:onClick="revelarCarta"/>
         <ImageButton
             android:src="@drawable/interrogacao"
-            android:id="@+id/imb3" />
+            android:id="@+id/imb3"
+            android:onClick="revelarCarta"/>
         <ImageButton
             android:src="@drawable/interrogacao"
-            android:id="@+id/imb4" />
+            android:id="@+id/imb4"
+            android:onClick="revelarCarta"/>
         <ImageButton
             android:src="@drawable/interrogacao"
-            android:id="@+id/imb5" />
+            android:id="@+id/imb5"
+            android:onClick="revelarCarta"/>
     </TableRow>
     <TableRow>
-        <ImageButton android:src="@drawable/interrogacao"/>
-        <ImageButton android:src="@drawable/interrogacao"/>
-        <ImageButton android:src="@drawable/interrogacao"/>
-        <ImageButton android:src="@drawable/interrogacao"/>
-        <ImageButton android:src="@drawable/interrogacao"/>
+        <ImageButton
+            android:src="@drawable/interrogacao"
+            android:id="@+id/imb6"
+            android:onClick="revelarCarta"/>
+        <ImageButton
+            android:src="@drawable/interrogacao"
+            android:id="@+id/imb7"
+            android:onClick="revelarCarta"/>
+        <ImageButton
+            android:src="@drawable/interrogacao"
+            android:id="@+id/imb8"
+            android:onClick="revelarCarta"/>
+        <ImageButton
+            android:src="@drawable/interrogacao"
+            android:id="@+id/imb9"
+            android:onClick="revelarCarta"/>
+        <ImageButton
+            android:src="@drawable/interrogacao"
+            android:id="@+id/imb10"
+            android:onClick="revelarCarta"/>
     </TableRow>
     <TableRow>
-        <ImageButton android:src="@drawable/interrogacao"/>
-        <ImageButton android:src="@drawable/interrogacao"/>
-        <ImageButton android:src="@drawable/interrogacao"/>
-        <ImageButton android:src="@drawable/interrogacao"/>
-        <ImageButton android:src="@drawable/interrogacao"/>
+        <ImageButton
+            android:src="@drawable/interrogacao"
+            android:id="@+id/imb11"
+            android:onClick="revelarCarta"/>
+        <ImageButton
+            android:src="@drawable/interrogacao"
+            android:id="@+id/imb12"
+            android:onClick="revelarCarta"/>
+        <ImageButton
+            android:src="@drawable/interrogacao"
+            android:id="@+id/imb13"
+            android:onClick="revelarCarta"/>
+        <ImageButton
+            android:src="@drawable/interrogacao"
+            android:id="@+id/imb14"
+            android:onClick="revelarCarta"/>
+        <ImageButton
+            android:src="@drawable/interrogacao"
+            android:id="@+id/imb15"
+            android:onClick="revelarCarta"/>
     </TableRow>
     <TableRow>
-        <ImageButton android:src="@drawable/interrogacao"/>
-        <ImageButton android:src="@drawable/interrogacao"/>
-        <ImageButton android:src="@drawable/interrogacao"/>
-        <ImageButton android:src="@drawable/interrogacao"/>
-        <ImageButton android:src="@drawable/interrogacao"/>
+        <ImageButton
+            android:src="@drawable/interrogacao"
+            android:id="@+id/imb16"
+            android:onClick="revelarCarta"/>
+        <ImageButton
+            android:src="@drawable/interrogacao"
+            android:id="@+id/imb17"
+            android:onClick="revelarCarta"/>
+        <ImageButton
+            android:src="@drawable/interrogacao"
+            android:id="@+id/imb18"
+            android:onClick="revelarCarta"/>
+        <ImageButton
+            android:src="@drawable/interrogacao"
+            android:id="@+id/imb19"
+            android:onClick="revelarCarta"/>
+        <ImageButton
+            android:src="@drawable/interrogacao"
+            android:id="@+id/imb20"
+            android:onClick="revelarCarta"/>
     </TableRow>
     <TableRow>
-        <ImageButton android:src="@drawable/interrogacao"/>
-        <ImageButton android:src="@drawable/interrogacao"/>
-        <ImageButton android:src="@drawable/interrogacao"/>
-        <ImageButton android:src="@drawable/interrogacao"/>
-        <ImageButton android:src="@drawable/interrogacao"/>
+        <ImageButton
+            android:src="@drawable/interrogacao"
+            android:id="@+id/imb21"
+            android:onClick="revelarCarta"/>
+        <ImageButton
+            android:src="@drawable/interrogacao"
+            android:id="@+id/imb22"
+            android:onClick="revelarCarta"/>
+        <ImageButton
+            android:src="@drawable/interrogacao"
+            android:id="@+id/imb23"
+            android:onClick="revelarCarta"/>
+        <ImageButton
+            android:src="@drawable/interrogacao"
+            android:id="@+id/imb24"
+            android:onClick="revelarCarta"/>
+        <ImageButton
+            android:src="@drawable/interrogacao"
+            android:id="@+id/imb25"
+            android:onClick="revelarCarta"/>
     </TableRow>
 
     <LinearLayout

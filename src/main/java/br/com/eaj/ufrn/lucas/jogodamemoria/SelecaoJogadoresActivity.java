@@ -1,20 +1,15 @@
 package br.com.eaj.ufrn.lucas.jogodamemoria;
 
 import android.content.Intent;
-import android.os.Parcelable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.Toast;
-
-import java.io.Serializable;
 import java.util.ArrayList;
-import java.util.List;
 
 public class SelecaoJogadoresActivity extends AppCompatActivity {
 
@@ -68,7 +63,7 @@ public class SelecaoJogadoresActivity extends AppCompatActivity {
 
     }
 
-    protected void iniciar(View view){
+    public void iniciar(View view){
 
         String nome1 = ((EditText) findViewById(R.id.editTjogador1)).getText().toString();
         String nome2 = ((EditText) findViewById(R.id.editTjogador2)).getText().toString();
@@ -96,8 +91,8 @@ public class SelecaoJogadoresActivity extends AppCompatActivity {
             if(!nome2.equals(""))
                 jogadores.add( new Jogador(nome2));
 
-             if(!nome3.equals(""))
-                 jogadores.add( new Jogador(nome3));
+            if(!nome3.equals(""))
+                jogadores.add( new Jogador(nome3));
 
             if(!nome4.equals(""))
                 jogadores.add( new Jogador(nome4));
