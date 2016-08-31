@@ -2,12 +2,9 @@ package br.com.eaj.ufrn.lucas.jogodamemoria;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
-import android.widget.ImageButton;
 
 import java.util.ArrayList;
-import java.util.Collections;
 
 public class gameActivity extends AppCompatActivity {
 
