@@ -22,9 +22,10 @@ public class SelecaoJogadoresActivity extends AppCompatActivity {
         final TextView ts = (TextView) findViewById(R.id.textSeekbar);
         EditText ativaJogador; // Responsável por controlar a visibilidade dos EditiText's
 
+        sb.setMax(2);
         // Seta o progresso do seekbar inicialmente como 2 e exibe seu valaor no textvie
-        sb.setProgress(2);
-        ts.setText(sb.getProgress()+ "");
+        sb.setProgress(sb.getMax() + 2);
+        ts.setText(sb.getProgress() + 2+ "");
 
         sb.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
 
@@ -34,7 +35,6 @@ public class SelecaoJogadoresActivity extends AppCompatActivity {
             public void onProgressChanged(SeekBar seekBar, int progresso, boolean b) {
                 progresso += 2;
                 ts.setText(progresso + "");
-                Log.i("Teste", ""+progresso);
                 if (progresso <= 2) {
                     ativaJogador = (EditText) findViewById(R.id.editTjogador3);
                     ativaJogador.setVisibility(View.INVISIBLE);
@@ -63,6 +63,11 @@ public class SelecaoJogadoresActivity extends AppCompatActivity {
 
     }
 
+    /**
+     * Evento do botão iniciar, que irá pegar os nomes dos jogadores digitados nos campos e adicionar
+     * a um objeto jogador que por sua ver, será adicionado a um array que será enviado para a game
+     * activity que irá tratar do processamento do jogo
+     */
     public void iniciar(View view){
 
         String nome1 = ((EditText) findViewById(R.id.editTjogador1)).getText().toString();
@@ -97,6 +102,7 @@ public class SelecaoJogadoresActivity extends AppCompatActivity {
             if(!nome4.equals(""))
                 jogadores.add( new Jogador(nome4));
 
+            //Adiciona a intent o array contendo os nomes dos jogadores
             intent.putParcelableArrayListExtra("jogadores", jogadores);
             //adiciona ao pacote a quantidade de jogadores
             bundle.putString("quantidade", ""+quantidadeJogadores);

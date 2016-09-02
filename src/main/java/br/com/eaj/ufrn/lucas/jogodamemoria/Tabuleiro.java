@@ -17,45 +17,23 @@ public class Tabuleiro {
 
     private static final int LINHAS = 5; // quantidade de linhas que o tabuleiro irá ter
     private static final int COLUNAS = 5; // quantidade de colunas
-    private static List<Integer> ordemTabuleiro; // Armazena a ordem em que as cartas irão ser geradas no tabuleiro
-    private  static List<Integer> botoes; //Armazena o id dos botões
-
 
     // Define a ordem em que as cartas irão ser geradas no tabuleiro
-    public static void inicializarTabuleiro(ArrayList<Carta> cartas){
-        Log.i("id" , "inicializarTabuleiro()");
-        //ordemTabuleiro = new ArrayList<>();
-        /**
-         * Preenche o tabuleiro da seguinte forma:
-         * a primeira parte da 'matriz' será preenchida com o valor de i, que irá de 1 à 12
-         * a segunda metade com o valor de j, que vai de 24 à 13. Dessa forma irá sobrar uma posição
-         * que refere-se a posição reservada para a carta coringa.
-         * Assim só serão necessárias 12 voltas, no laço, para preencher a ordem da matriz.
-         */
-        definiListaBotao();
-        int i = 0;
-        for (Carta c : cartas){
-
-            cartas.get(i).setIdBotao(botoes.get(i));
-            i++;
-
-        }// adiciona um valor que refere-se ao conringa
-        //ordemTabuleiro.add(0);
-
-        // Embaralha a ordem dos elementos do array, assim, defini-se uma ordem aleatória para o início das cartas
-        //Collections.shuffle(ordemTabuleiro);
-
-        //
-
+    public static void inicializarTabuleiro(ArrayList<Carta> cartas, ArrayList<Integer> botoes){
 ;
+        //Associa o id de um botão aleatório a uma imagem que será exibida ao ser clicada
+        int i = 0;
+        for (Carta c : cartas) {
+            c.setIdBotao(botoes.get(i));
+            ++i;
+        }
+
     }
 
-    //Tem que gerar um número aleatório e esse id será a posição que uma determinada carta será adicionada ao tabuleiro
+    //Cria uma lista contendo todos os ids dos botões e depois irá embaralhar a ordem que esses foram
+    //inseridos na lista
+    public static void definiListaBotao(ArrayList<Integer> botoes){
 
-    //Cria uma lista contendo todos os ids dos botões
-    private static void definiListaBotao(){
-
-        botoes = new ArrayList<>();
         botoes.add(R.id.imb1);
         botoes.add(R.id.imb2);
         botoes.add(R.id.imb3);
@@ -81,8 +59,8 @@ public class Tabuleiro {
         botoes.add(R.id.imb23);
         botoes.add(R.id.imb24);
         botoes.add(R.id.imb25);
-        Collections.shuffle(botoes);
-        Log.i("id" , "definiListaBotao()");
+        Collections.shuffle(botoes); // Embaralha os ids da lista
+
     }
 
 }

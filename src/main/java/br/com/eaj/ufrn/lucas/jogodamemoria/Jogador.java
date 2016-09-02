@@ -12,8 +12,8 @@ import java.util.Collections;
 public class Jogador implements Parcelable {
 
     private String nomeJogador; // nome do jogador
-    private Integer pontos;     // pontuação do jogador
-    private Integer jogadas;    // representará a pontuação do jogador a cada partida
+    private int pontos;     // pontuação do jogador
+    private boolean jogou = false; // Variável controladora para verificar se o jogador já teve sua vez naquela rodada
     private Boolean venceu;     // Indica se o jogador venceu ou não, para o caro de uma nova partida, o vencedor ser o primeiro a jogar
 
     public Jogador(String nomeJogador){
@@ -21,17 +21,6 @@ public class Jogador implements Parcelable {
     }
 
     public Jogador(){}
-
-    //Método para gerar a ordem em que os jogadores irão jogar. Define quem irá iniciar a jogada, quem será o segundo e assim por diante
-    protected static void gerarSequenciaJogadores(int quantidade, ArrayList<Integer> ordem) {
-
-        // Vai adicionar a lista de ordem dos jogadores um número entre 1 e a quantiidade máxima de jogadores
-        for (int i = 0; i < quantidade; i++)
-            ordem.add(1 + i);
-        // Vai embaralhar a ordem em que os elementos foram inseridos na lista 'ordem'
-        Collections.shuffle(ordem);
-
-    }
 
     protected Jogador(Parcel in) {
         nomeJogador = in.readString();
@@ -49,22 +38,13 @@ public class Jogador implements Parcelable {
         }
     };
 
-    // controla a quantidade de jogadas dos jogadores
-    public void incrementaJogada(){
-        this.jogadas++;
-    }
-
     // Controla a pontuação do jogador
     public void incrementaPontos(){
         this.pontos++;
     }
 
-    public Integer getPontos() {
+    public int getPontos() {
         return pontos;
-    }
-
-    public Integer getJogadas() {
-        return jogadas;
     }
 
     public Boolean getVenceu() {
@@ -81,6 +61,14 @@ public class Jogador implements Parcelable {
 
     public void setNomeJogador(String nomeJogador) {
         this.nomeJogador = nomeJogador;
+    }
+
+    public boolean isJogou() {
+        return jogou;
+    }
+
+    public void setJogou(boolean jogou) {
+        this.jogou = jogou;
     }
 
     @Override
