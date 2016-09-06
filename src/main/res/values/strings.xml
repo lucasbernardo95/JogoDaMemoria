@@ -11,8 +11,8 @@
     <string name="quantidadeDeJogadores">3</string>
     <string name="nomeJogador">Jogador: </string>
     <string name="fimDeJogo">Fim do jogo!</string>
-    <string name="vencedor">jogador....., venceu!</string>
-    <string name="placar">O placar atual é </string>
+    <string name="vencedor">jogador </string>
+    <string name="placar">Placar</string>
     <string name="jogarNovamente">JOGAR NOVAMENTE</string>
     <string name="novoJogo">NOVO JOGO</string>
     <string name="sair">SAIR</string>

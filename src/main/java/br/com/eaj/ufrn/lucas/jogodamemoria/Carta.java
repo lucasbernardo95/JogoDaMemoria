@@ -11,8 +11,8 @@ import java.util.Collections;
 
 public class Carta {
 
-    private Integer id; //Representa o id da imagem
-    private Integer idBotao; //Refere-se a qual botao irá exibir essa imagem, ou seja, a qual botão estará associado a essa imagem
+    private int id; //Representa o id da imagem
+    private int idBotao; //Refere-se a qual botao irá exibir essa imagem, ou seja, a qual botão estará associado a essa imagem
     public boolean flip = false;
 
     public Carta(Integer id) {
@@ -22,11 +22,11 @@ public class Carta {
     }
     public Carta(){}
 
-    public Integer getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(int id) {
         this.id = id;
     }
 
@@ -38,11 +38,11 @@ public class Carta {
         this.flip = flip;
     }
 
-    public Integer getIdBotao() {
+    public int getIdBotao() {
         return idBotao;
     }
 
-    public void setIdBotao(Integer idBotao) {
+    public void setIdBotao(int idBotao) {
         this.idBotao = idBotao;
     }
 

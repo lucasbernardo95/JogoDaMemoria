@@ -12,9 +12,10 @@ import java.util.Collections;
 public class Jogador implements Parcelable {
 
     private String nomeJogador; // nome do jogador
-    private int pontos;     // pontuação do jogador
+    private int pontos = 0;     // pontuação do jogador
     private boolean jogou = false; // Variável controladora para verificar se o jogador já teve sua vez naquela rodada
-    private Boolean venceu;     // Indica se o jogador venceu ou não, para o caro de uma nova partida, o vencedor ser o primeiro a jogar
+    private Boolean venceu = false;     // Indica se o jogador venceu ou não, para o caro de uma nova partida, o vencedor ser o primeiro a jogar
+    private Boolean empatou = false; //Variável que indica de houve ou não empate
 
     public Jogador(String nomeJogador){
         this.nomeJogador = nomeJogador;
@@ -57,6 +58,14 @@ public class Jogador implements Parcelable {
 
     public String getNomeJogador() {
         return nomeJogador;
+    }
+
+    public Boolean getEmpatou() {
+        return empatou;
+    }
+
+    public void setEmpatou(Boolean empatou) {
+        this.empatou = empatou;
     }
 
     public void setNomeJogador(String nomeJogador) {

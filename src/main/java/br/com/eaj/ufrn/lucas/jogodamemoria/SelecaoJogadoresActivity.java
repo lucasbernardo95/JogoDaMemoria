@@ -83,12 +83,6 @@ public class SelecaoJogadoresActivity extends AppCompatActivity {
             // Após pegar os nomes dos jogadores e instanciá-los, eles serão adicionados a um bundle e passados em uma intent para a próxima activity
             Intent intent = new Intent(SelecaoJogadoresActivity.this, gameActivity.class);
 
-            //informo o contexto da tela atual e informo qual tela eu quero abrir
-            Bundle bundle = new Bundle();
-
-            //representa a quantidade de jogadores com nomes válidos
-            int quantidadeJogadores = 0;
-
             //Testa se os nome dos jogadores são diferentes de nulo, se for, instancia um novo jogador, passando o nome como parâmetro e adiciona ao array
             if(!nome1.equals(""))
                 jogadores.add( new Jogador(nome1));
@@ -104,11 +98,6 @@ public class SelecaoJogadoresActivity extends AppCompatActivity {
 
             //Adiciona a intent o array contendo os nomes dos jogadores
             intent.putParcelableArrayListExtra("jogadores", jogadores);
-            //adiciona ao pacote a quantidade de jogadores
-            bundle.putString("quantidade", ""+quantidadeJogadores);
-
-            //Adiciona o bundle à intent
-            intent.putExtras(bundle);
 
             //Inicia a próxima activity passando a intent com o pacote contendo os nomes dos jogadores
             startActivity(intent);

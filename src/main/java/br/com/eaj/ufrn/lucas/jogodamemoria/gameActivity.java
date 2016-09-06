@@ -1,5 +1,6 @@
 package br.com.eaj.ufrn.lucas.jogodamemoria;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -24,6 +25,9 @@ public class gameActivity extends AppCompatActivity {
     private ImageButton imb;
     private int ordem = 0; //Controla a ordem dos jogadores, quem irá jogar e quando.
     TextView nome;//Variável para exibir o nome dos jogadores
+    private int total = 0; //variável que indica o final no jogo. quando atingir o valor de 12 pontos, o jogo será encerrado
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,6 +66,32 @@ public class gameActivity extends AppCompatActivity {
 
     }
 
+    private void fimDoGame(){
+        //maior = j.getPontos() > maior ? maior: 0;
+        int i = 0, maior = 0;
+        for (Jogador j : jogadores){
+            if (j.getPontos() > maior){
+                maior = j.getPontos();
+                i++;
+            }
+        }
+        //seta o possível vendedor
+        jogadores.get(i).setVenceu(true);
+        Log.i("venceu", "venceu = "+jogadores.get(i).getNomeJogador() + "posição " + jogadores.get(i).getPontos() + " maior" + maior);
+        //verifica se tem alguém com a mesma pontuação
+        for (Jogador j : jogadores){
+            if (j.getPontos() == jogadores.get(i).getPontos() && j.getVenceu() == false){
+                j.setEmpatou(true);
+                jogadores.get(i).setEmpatou(true);
+                jogadores.get(i).setVenceu(false);
+                Log.i("empate","houve empate");
+            }
+        }
+        Intent intent = new Intent(gameActivity.this, fimDeJogoActivity.class);
+        intent.putParcelableArrayListExtra("jogadores", jogadores);
+        startActivityForResult(intent, 1);
+    }
+
     /**
      * @param id: id do botão clicado
      * Esse método irá pegar, de acordo com o botão clicado, a carta que está por trás desse botão,
@@ -79,19 +109,19 @@ public class gameActivity extends AppCompatActivity {
             //Testa se o id do botão clicado é igual ao iddo botão contido dentro do objeto carta
             //Cada carta possui um id que refere-se ao botão que ela será vinculada
             if (c.getIdBotao() == id) {
+
                 //Se for a primeira jogada executa os procedimentos listados a baixo
                 if (jogadas == 1){
                     //se cair o coringa o jogador perde a vez
                     if ((int)c.getId() == (int)R.drawable.coringa){
+                        clicavel(false);
                         /**mostra o coringa no botão clicado, dá um delay e desabilita os demais botões
                          * para evitar que o usuário saia clicando. após alguns segundos o jogo volta
                          * ao seu fluxo normalmente
                          */
                         ib = (ImageButton) findViewById(c.getIdBotao());
                         ib.setImageResource(c.getId());
-                        clicavel(false);
                         ib.postDelayed(delay, time);
-                        clicavel(true);
                         jogadas = 1;
                         controleRodada();
                         carta = null;
@@ -114,7 +144,7 @@ public class gameActivity extends AppCompatActivity {
 
                     // Se for a segunda jogada
                 } else if(jogadas == 2){
-
+                    clicavel(false);
                     par = c;//recebe a carta par
                     ib = (ImageButton) findViewById(id);//vincula o id do botão clicado ao imagebutton
                     ib.setImageResource(par.getId());//seta a imagem ao botão
@@ -123,17 +153,17 @@ public class gameActivity extends AppCompatActivity {
                     if ((int)c.getIdBotao() == (int)R.drawable.coringa){
                         ib = (ImageButton) findViewById(par.getIdBotao());
                         imb = (ImageButton) findViewById(carta.getIdBotao());
-                        clicavel(false);
                         ib.postDelayed(delay, time);
-                        clicavel(false);
                         par = null;
                         carta = null;
-
+                        clicavel(true);
+                        //altera a vez do jogador
                         controleRodada();
+                        break;
                     }
 
                     //Testa se as duas cartas clicadas são iguais
-                    if((int) carta.getId() == (int) par.getId() ){
+                    if(carta.getId() ==  par.getId() ){
                         //Seta as cartas como viradas para controlar estados das cartas posteriormente
                         int i = cartas.indexOf(carta);
                         cartas.get(i).setFlip(true);
@@ -153,21 +183,25 @@ public class gameActivity extends AppCompatActivity {
                         par = null;
                         jogadas = 1;
                         jogadores.get(ordem).incrementaPontos();
+                        Log.i("jogador" , "acertou uma = "+jogadores.get(ordem).getNomeJogador());
+                        total++;
+                        clicavel(true);
+                        if (total == 3)
+                            fimDoGame();
                         break;//finaliza
                         //Se não for um par, as imagens clicadas no primeiro e segundo click da jogada
                         // tornarão ao estado inicial, ou seja, exibe uma interrogação como imagem
-                    } else if ((int) carta.getId() != (int) par.getId()) {
+                    } else if ( carta.getId() !=  par.getId()) {
                         //caso não seja um par, retorna os botões clicados para exibir uma interrogação como imagem
                         ib = (ImageButton) findViewById(par.getIdBotao());
                         imb = (ImageButton) findViewById(carta.getIdBotao());
-                        clicavel(false);
                         //Método usado para dar um delay no fluxo do jogo, aguarda 2 segundos e as imagens voltarão a ser uma interrogação
                         ib.postDelayed(delay, time);
                         //limpa os valores da do objeto carta e do par para evitar que peguem lixo de memória
                         carta = null;
                         par = null;
-                        clicavel(false);
                         controleRodada();
+                        clicavel(false);
                         break;
                     }
                 }
@@ -179,15 +213,15 @@ public class gameActivity extends AppCompatActivity {
     private void controleRodada(){
         //altera a vez do jogador, pois ele clicou no coringa, passa a vez para o próximo
         if (ordem < jogadores.size() - 1){
-            ++ordem;
+            ordem ++;
             jogadores.get(ordem).setJogou(true);
             nome.setText(jogadores.get(ordem).getNomeJogador());
         }else {
-            int i = 0;
+
             for (Jogador j :jogadores){
                 j.setJogou(false);
             }
-            ordem = 1;
+            ordem = 0;
             nome.setText(jogadores.get(ordem).getNomeJogador());
         }
     }

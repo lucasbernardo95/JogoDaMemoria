@@ -24,9 +24,9 @@
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="@string/vencedor"
         android:id="@+id/textViewNomeVencedor"
+        android:layout_marginTop="46dp"
         android:layout_below="@+id/textView4"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="42dp" />
+        android:layout_centerHorizontal="true" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -34,9 +34,53 @@
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="@string/placar"
         android:id="@+id/textViewPlacarFinal"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="36dp"
         android:layout_below="@+id/textViewNomeVencedor"
-        android:layout_toStartOf="@+id/textView4" />
+        android:layout_centerHorizontal="true" />
+    <TableLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="30dp"
+        android:stretchColumns="0,1,2"
+        android:layout_below="@+id/textViewPlacarFinal"
+        android:layout_centerInParent="true">
+        <TableRow>
+            <TextView
+                android:id="@+id/nome1"
+                android:text="@string/jogador1"/>
+            <TextView
+                android:id="@+id/pts1"
+                android:text="0"
+                />
+            <TextView
+                android:id="@+id/pts2"
+                android:text="0"/>
+            <TextView
+                android:id="@+id/nome2"
+                android:text="@string/jogador2"/>
+        </TableRow>
+        <View
+            android:layout_height="2dip"
+            android:layout_margin="10dp"
+            android:background="#FF909090"
+            android:layout_width="372dp"
+            android:id="@+id/dividetabela"/>
+        <TableRow android:id="@+id/coluna2">
+            <TextView
+                android:id="@+id/nome3"
+                android:text="@string/jogador3"/>
+            <TextView
+                android:id="@+id/pts3"
+                android:text="0"/>
+            <TextView
+                android:id="@+id/pts4"
+                android:text="0"/>
+            <TextView
+                android:id="@+id/nome4"
+                android:text="@string/jogador4"/>
+        </TableRow>
+
+    </TableLayout>
 
     <Button
         android:layout_width="wrap_content"
