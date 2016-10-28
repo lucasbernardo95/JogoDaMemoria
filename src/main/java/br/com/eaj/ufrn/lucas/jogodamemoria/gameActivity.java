@@ -1,4 +1,4 @@
-package br.com.eaj.ufrn.lucas.jogodamemoria;
+package br.com.ufrn.eaj.tads.lucasbernardo.jogodamemoria;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -7,11 +7,9 @@ import android.util.Log;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.TextView;
-
-import org.xml.sax.helpers.LocatorImpl;
+import android.widget.Toast;
 
 import java.util.ArrayList;
-import java.util.Collections;
 
 public class gameActivity extends AppCompatActivity {
 
@@ -21,13 +19,19 @@ public class gameActivity extends AppCompatActivity {
     private int jogadas = 1; // variável para controle de jogadas
     private Carta carta;
     private Carta par;
-    private ImageButton ib;
+    private ImageButton ib;//botões auxíliares para que seja possível comparar duas cartas selecionadas no jogo
     private ImageButton imb;
     private int ordem = 0; //Controla a ordem dos jogadores, quem irá jogar e quando.
-    TextView nome;//Variável para exibir o nome dos jogadores
     private int total = 0; //variável que indica o final no jogo. quando atingir o valor de 12 pontos, o jogo será encerrado
 
-
+    private TextView nome;
+    private TextView pts;
+    private TextView nome2;
+    private TextView pts2;
+    private TextView nome3;
+    private TextView pts3;
+    private TextView nome4;
+    private TextView pts4;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,14 +47,52 @@ public class gameActivity extends AppCompatActivity {
         Bundle pacote = getIntent().getExtras();
 
         // Recupera o ArrayList contendo os jogadores setatos na tela de seleção
-        jogadores = pacote.getParcelableArrayList("jogadores");
-        //Embaralha a ordem dos jogadores para definir uma sequêscia aleatória em que esses irão jogar
-        Collections.shuffle(jogadores);
+        jogadores = (ArrayList<Jogador>) pacote.get("jogadores");
 
         //Seta o nome do primeiro jogador ao textView
-        nome = (TextView) findViewById(R.id.textnome);
-        nome.setText(jogadores.get(ordem).getNomeJogador());
+        nome = (TextView) findViewById(R.id.player);
+        pts = (TextView) findViewById(R.id.pts);
+        nome.setText(jogadores.get(0).getNomeJogador());
+        pts.setText(""+jogadores.get(0).getPontos());
 
+        nome2 = (TextView) findViewById(R.id.player2);
+        pts2 = (TextView) findViewById(R.id.pts2);
+        nome2.setText(jogadores.get(1).getNomeJogador());
+        pts2.setText(""+jogadores.get(1).getPontos());
+
+        nome3 = (TextView) findViewById(R.id.player3);
+        pts3 = (TextView) findViewById(R.id.pts3);
+
+        nome4 = (TextView) findViewById(R.id.player4);
+        pts4 = (TextView) findViewById(R.id.pts4);
+
+        if(jogadores.size() == 2){
+            nome3.setVisibility(View.INVISIBLE);
+            pts3.setVisibility(View.INVISIBLE);
+            ib = (ImageButton) findViewById(R.id.invocador3);
+            ib.setVisibility(View.INVISIBLE);
+
+            nome4.setVisibility(View.INVISIBLE);
+            pts4.setVisibility(View.INVISIBLE);
+            ib = (ImageButton) findViewById(R.id.invocador4);
+            ib.setVisibility(View.INVISIBLE);
+        } else if (jogadores.size() == 3){
+            nome3.setText(jogadores.get(2).getNomeJogador());
+            pts3.setText(""+jogadores.get(2).getPontos());
+
+            nome4.setVisibility(View.INVISIBLE);
+            pts4.setVisibility(View.INVISIBLE);
+            ib = (ImageButton) findViewById(R.id.invocador4);
+            ib.setVisibility(View.INVISIBLE);
+        } else if (jogadores.size() == 4){
+            nome3.setText(jogadores.get(2).getNomeJogador());
+            pts3.setText(""+jogadores.get(2).getPontos());
+
+            nome4.setText(jogadores.get(3).getNomeJogador());
+            pts4.setText(""+jogadores.get(3).getPontos());
+        }
+
+        exibirTurno();
         cartas = new ArrayList<>();
         //Cria uma lista contendo todas as cartas
         Carta.instanciarCartas(cartas);
@@ -66,30 +108,78 @@ public class gameActivity extends AppCompatActivity {
 
     }
 
+    /**
+     *
+     */
+    public void exibirTurno(){
+        switch (ordem){
+            case 0:
+                pts.setTextColor(getResources().getColor(R.color.jogadorAtual));
+                nome.setTextColor(getResources().getColor(R.color.jogadorAtual));
+                pts2.setTextColor(getResources().getColor(R.color.jogadorEmEspera));
+                nome2.setTextColor(getResources().getColor(R.color.jogadorEmEspera));
+                pts3.setTextColor(getResources().getColor(R.color.jogadorEmEspera));
+                nome3.setTextColor(getResources().getColor(R.color.jogadorEmEspera));
+                pts4.setTextColor(getResources().getColor(R.color.jogadorEmEspera));
+                nome4.setTextColor(getResources().getColor(R.color.jogadorEmEspera));
+                break;
+            case 1:
+                pts.setTextColor(getResources().getColor(R.color.jogadorEmEspera));
+                nome.setTextColor(getResources().getColor(R.color.jogadorEmEspera));
+                pts2.setTextColor(getResources().getColor(R.color.jogadorAtual));
+                nome2.setTextColor(getResources().getColor(R.color.jogadorAtual));
+                pts3.setTextColor(getResources().getColor(R.color.jogadorEmEspera));
+                nome3.setTextColor(getResources().getColor(R.color.jogadorEmEspera));
+                pts4.setTextColor(getResources().getColor(R.color.jogadorEmEspera));
+                nome4.setTextColor(getResources().getColor(R.color.jogadorEmEspera));
+                break;
+            case 2:
+                pts.setTextColor(getResources().getColor(R.color.jogadorEmEspera));
+                nome.setTextColor(getResources().getColor(R.color.jogadorEmEspera));
+                pts2.setTextColor(getResources().getColor(R.color.jogadorEmEspera));
+                nome2.setTextColor(getResources().getColor(R.color.jogadorEmEspera));
+                pts3.setTextColor(getResources().getColor(R.color.jogadorAtual));
+                nome3.setTextColor(getResources().getColor(R.color.jogadorAtual));
+                pts4.setTextColor(getResources().getColor(R.color.jogadorEmEspera));
+                nome4.setTextColor(getResources().getColor(R.color.jogadorEmEspera));
+                break;
+            case 3:
+                pts.setTextColor(getResources().getColor(R.color.jogadorEmEspera));
+                nome.setTextColor(getResources().getColor(R.color.jogadorEmEspera));
+                pts2.setTextColor(getResources().getColor(R.color.jogadorEmEspera));
+                nome2.setTextColor(getResources().getColor(R.color.jogadorEmEspera));
+                pts3.setTextColor(getResources().getColor(R.color.jogadorEmEspera));
+                nome3.setTextColor(getResources().getColor(R.color.jogadorEmEspera));
+                pts4.setTextColor(getResources().getColor(R.color.jogadorAtual));
+                nome4.setTextColor(getResources().getColor(R.color.jogadorAtual));
+                break;
+        }
+    }
+
     private void fimDoGame(){
-        //maior = j.getPontos() > maior ? maior: 0;
         int i = 0, maior = 0;
-        for (Jogador j : jogadores){
-            if (j.getPontos() > maior){
-                maior = j.getPontos();
-                i++;
+        for (int l = 0; l < jogadores.size(); l++){
+            if (jogadores.get(l).getPontos() > maior){
+                maior = jogadores.get(l).getPontos();
+                i = l;//recebe a posição do jogador com maior pontuação
             }
         }
-        //seta o possível vendedor
+        //marca o jogador de maior pontuação como possível vendedor
         jogadores.get(i).setVenceu(true);
-        Log.i("venceu", "venceu = "+jogadores.get(i).getNomeJogador() + "posição " + jogadores.get(i).getPontos() + " maior" + maior);
+
         //verifica se tem alguém com a mesma pontuação
         for (Jogador j : jogadores){
-            if (j.getPontos() == jogadores.get(i).getPontos() && j.getVenceu() == false){
+            if (j.getPontos() == jogadores.get(i).getPontos() && !j.getVenceu()){
+                j.setVenceu(false);
                 j.setEmpatou(true);
-                jogadores.get(i).setEmpatou(true);
                 jogadores.get(i).setVenceu(false);
-                Log.i("empate","houve empate");
+                jogadores.get(i).setEmpatou(true);
             }
         }
         Intent intent = new Intent(gameActivity.this, fimDeJogoActivity.class);
-        intent.putParcelableArrayListExtra("jogadores", jogadores);
+        intent.putExtra("jogadores", jogadores);
         startActivityForResult(intent, 1);
+        finish();
     }
 
     /**
@@ -183,10 +273,25 @@ public class gameActivity extends AppCompatActivity {
                         par = null;
                         jogadas = 1;
                         jogadores.get(ordem).incrementaPontos();
-                        Log.i("jogador" , "acertou uma = "+jogadores.get(ordem).getNomeJogador());
+
+                        switch (ordem){
+                            case 0:
+                                pts.setText(""+jogadores.get(ordem).getPontos());
+                                break;
+                            case 1:
+                                pts2.setText(""+jogadores.get(ordem).getPontos());
+                                break;
+                            case 2:
+                                pts3.setText(""+jogadores.get(ordem).getPontos());
+                                break;
+                            case 3:
+                                pts4.setText(""+jogadores.get(ordem).getPontos());
+                                break;
+                        }
+
                         total++;
                         clicavel(true);
-                        if (total == 3)
+                        if (total == 12)
                             fimDoGame();
                         break;//finaliza
                         //Se não for um par, as imagens clicadas no primeiro e segundo click da jogada
@@ -210,20 +315,19 @@ public class gameActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * Método para controlar a vez de jogar de cada jogador. Sempre que for chamado altera o valor da
+     * variável 'ordem' que controla o índice do array de jogadores, permitindo assim dizer quem será
+     * o próximo a jogar.
+     */
     private void controleRodada(){
-        //altera a vez do jogador, pois ele clicou no coringa, passa a vez para o próximo
-        if (ordem < jogadores.size() - 1){
+        if (ordem < jogadores.size() - 1)
             ordem ++;
-            jogadores.get(ordem).setJogou(true);
-            nome.setText(jogadores.get(ordem).getNomeJogador());
-        }else {
-
-            for (Jogador j :jogadores){
-                j.setJogou(false);
-            }
+        else
             ordem = 0;
-            nome.setText(jogadores.get(ordem).getNomeJogador());
-        }
+        //De acordo de a vez do jogador vai sendo alterada a cor de sua pontuação e seu nome mudam para a cor vermelha
+        //indicando de quem é a vez de jogar
+        exibirTurno();
     }
 
     /**
@@ -265,6 +369,10 @@ public class gameActivity extends AppCompatActivity {
 
     /**
      * @param v: refere-se ao botão que está sendo clicado no xml
+     * Sempre que o usuário clicar em uma imagem da tela o método revelarCarta será chamado
+     * e se acordo com o id desse botão ele irá buscar a carta que refere-se ao mesmo no array que
+     * contém as cartas. Esse processo de buscar qual carta está por trás do botão clicado é feito
+     * no método pegaCarta.
      */
     public void revelarCarta(View v) {
 

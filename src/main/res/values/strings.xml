@@ -13,8 +13,10 @@
     <string name="fimDeJogo">Fim do jogo!</string>
     <string name="vencedor">jogador </string>
     <string name="placar">Placar</string>
-    <string name="jogarNovamente">JOGAR NOVAMENTE</string>
+    <string name="jogarNovamente">Jogar novamente</string>
     <string name="novoJogo">NOVO JOGO</string>
     <string name="sair">SAIR</string>
+    <string name="vendeu">venceu!</string>
+    <string name="empate">Empate!</string>
     <string name="minimoJogadores">A quantidade mínima de jogadores são dois</string>
 </resources>

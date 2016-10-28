@@ -7,7 +7,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="br.com.eaj.ufrn.lucas.jogodamemoria.fimDeJogoActivity">
+    tools:context=".fimDeJogoActivity">
 
     <TextView
         android:layout_width="wrap_content"
@@ -89,7 +89,8 @@
         android:id="@+id/buttonJogarNovamente"
         android:layout_below="@+id/textViewPlacarFinal"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="110dp" />
+        android:layout_marginTop="110dp"
+        android:onClick="jogarNovamente"/>
 
     <Button
         android:layout_width="wrap_content"
@@ -98,7 +99,8 @@
         android:id="@+id/buttonNovoJogo"
         android:layout_below="@+id/buttonJogarNovamente"
         android:layout_alignEnd="@+id/buttonJogarNovamente"
-        android:layout_alignStart="@+id/buttonJogarNovamente" />
+        android:layout_alignStart="@+id/buttonJogarNovamente"
+        android:onClick="novoJogo"/>
 
     <Button
         android:layout_width="wrap_content"
@@ -107,5 +109,6 @@
         android:id="@+id/buttonSair"
         android:layout_below="@+id/buttonNovoJogo"
         android:layout_alignStart="@+id/buttonNovoJogo"
-        android:layout_alignEnd="@+id/buttonJogarNovamente" />
+        android:layout_alignEnd="@+id/buttonJogarNovamente"
+        android:onClick="sair"/>
 </RelativeLayout>

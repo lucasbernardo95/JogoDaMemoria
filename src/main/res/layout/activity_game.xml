@@ -7,142 +7,318 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    android:shrinkColumns="0,1,2,3"
-    tools:context="br.com.eaj.ufrn.lucas.jogodamemoria.gameActivity">
+    android:shrinkColumns="0,1,2,3,4"
+    android:background="@color/colorActiivityGame"
+    tools:context=".gameActivity">
 
     <TableRow>
         <ImageButton
             android:src="@drawable/interrogacao"
             android:id="@+id/imb1"
-            android:onClick="revelarCarta"/>
+            android:onClick="revelarCarta"
+            android:layout_width="@dimen/largura"
+            android:layout_height="@dimen/altura"
+            android:scaleType="center" />
         <ImageButton
             android:src="@drawable/interrogacao"
             android:id="@+id/imb2"
-            android:onClick="revelarCarta"/>
+            android:onClick="revelarCarta"
+            android:layout_width="@dimen/largura"
+            android:layout_height="@dimen/altura"
+            android:scaleType="center" />
         <ImageButton
             android:src="@drawable/interrogacao"
             android:id="@+id/imb3"
-            android:onClick="revelarCarta"/>
+            android:onClick="revelarCarta"
+            android:layout_width="@dimen/largura"
+            android:layout_height="@dimen/altura"
+            android:scaleType="center" />
         <ImageButton
             android:src="@drawable/interrogacao"
             android:id="@+id/imb4"
-            android:onClick="revelarCarta"/>
+            android:onClick="revelarCarta"
+            android:layout_width="@dimen/largura"
+            android:layout_height="@dimen/altura"
+            android:scaleType="center" />
         <ImageButton
             android:src="@drawable/interrogacao"
             android:id="@+id/imb5"
-            android:onClick="revelarCarta"/>
+            android:onClick="revelarCarta"
+            android:layout_width="@dimen/largura"
+            android:layout_height="@dimen/altura"
+            android:scaleType="center" />
     </TableRow>
     <TableRow>
         <ImageButton
             android:src="@drawable/interrogacao"
             android:id="@+id/imb6"
-            android:onClick="revelarCarta"/>
+            android:onClick="revelarCarta"
+            android:layout_width="@dimen/largura"
+            android:layout_height="@dimen/altura"
+            android:scaleType="center" />
         <ImageButton
             android:src="@drawable/interrogacao"
             android:id="@+id/imb7"
-            android:onClick="revelarCarta"/>
+            android:onClick="revelarCarta"
+            android:layout_width="@dimen/largura"
+            android:layout_height="@dimen/altura"
+            android:scaleType="center" />
         <ImageButton
             android:src="@drawable/interrogacao"
             android:id="@+id/imb8"
-            android:onClick="revelarCarta"/>
+            android:onClick="revelarCarta"
+            android:layout_width="@dimen/largura"
+            android:layout_height="@dimen/altura"
+            android:scaleType="center" />
         <ImageButton
             android:src="@drawable/interrogacao"
             android:id="@+id/imb9"
-            android:onClick="revelarCarta"/>
+            android:onClick="revelarCarta"
+            android:layout_width="@dimen/largura"
+            android:layout_height="@dimen/altura"
+            android:scaleType="center" />
         <ImageButton
             android:src="@drawable/interrogacao"
             android:id="@+id/imb10"
-            android:onClick="revelarCarta"/>
+            android:onClick="revelarCarta"
+            android:layout_width="@dimen/largura"
+            android:layout_height="@dimen/altura"
+            android:scaleType="center" />
     </TableRow>
     <TableRow>
         <ImageButton
             android:src="@drawable/interrogacao"
             android:id="@+id/imb11"
-            android:onClick="revelarCarta"/>
+            android:onClick="revelarCarta"
+            android:layout_width="@dimen/largura"
+            android:layout_height="@dimen/altura"
+            android:scaleType="center" />
         <ImageButton
             android:src="@drawable/interrogacao"
             android:id="@+id/imb12"
-            android:onClick="revelarCarta"/>
+            android:onClick="revelarCarta"
+            android:layout_width="@dimen/largura"
+            android:layout_height="@dimen/altura"
+            android:scaleType="center" />
         <ImageButton
             android:src="@drawable/interrogacao"
             android:id="@+id/imb13"
-            android:onClick="revelarCarta"/>
+            android:onClick="revelarCarta"
+            android:layout_width="@dimen/largura"
+            android:layout_height="@dimen/altura"
+            android:scaleType="center" />
         <ImageButton
             android:src="@drawable/interrogacao"
             android:id="@+id/imb14"
-            android:onClick="revelarCarta"/>
+            android:onClick="revelarCarta"
+            android:layout_width="@dimen/largura"
+            android:layout_height="@dimen/altura"
+            android:scaleType="center" />
         <ImageButton
             android:src="@drawable/interrogacao"
             android:id="@+id/imb15"
-            android:onClick="revelarCarta"/>
+            android:onClick="revelarCarta"
+            android:layout_width="@dimen/largura"
+            android:layout_height="@dimen/altura"
+            android:scaleType="center" />
     </TableRow>
     <TableRow>
         <ImageButton
             android:src="@drawable/interrogacao"
             android:id="@+id/imb16"
-            android:onClick="revelarCarta"/>
+            android:onClick="revelarCarta"
+            android:layout_width="@dimen/largura"
+            android:layout_height="@dimen/altura"
+            android:scaleType="center" />
         <ImageButton
             android:src="@drawable/interrogacao"
             android:id="@+id/imb17"
-            android:onClick="revelarCarta"/>
+            android:onClick="revelarCarta"
+            android:layout_width="@dimen/largura"
+            android:layout_height="@dimen/altura"
+            android:scaleType="center" />
         <ImageButton
             android:src="@drawable/interrogacao"
             android:id="@+id/imb18"
-            android:onClick="revelarCarta"/>
+            android:onClick="revelarCarta"
+            android:layout_width="@dimen/largura"
+            android:layout_height="@dimen/altura"
+            android:scaleType="center" />
         <ImageButton
             android:src="@drawable/interrogacao"
             android:id="@+id/imb19"
-            android:onClick="revelarCarta"/>
+            android:onClick="revelarCarta"
+            android:layout_width="@dimen/largura"
+            android:layout_height="@dimen/altura"
+            android:scaleType="center" />
         <ImageButton
             android:src="@drawable/interrogacao"
             android:id="@+id/imb20"
-            android:onClick="revelarCarta"/>
+            android:onClick="revelarCarta"
+            android:layout_width="@dimen/largura"
+            android:layout_height="@dimen/altura"
+            android:scaleType="center" />
     </TableRow>
     <TableRow>
         <ImageButton
             android:src="@drawable/interrogacao"
             android:id="@+id/imb21"
-            android:onClick="revelarCarta"/>
+            android:onClick="revelarCarta"
+            android:layout_width="@dimen/largura"
+            android:layout_height="@dimen/altura"
+            android:scaleType="center" />
         <ImageButton
             android:src="@drawable/interrogacao"
             android:id="@+id/imb22"
-            android:onClick="revelarCarta"/>
+            android:onClick="revelarCarta"
+            android:layout_width="@dimen/largura"
+            android:layout_height="@dimen/altura"
+            android:scaleType="center" />
         <ImageButton
             android:src="@drawable/interrogacao"
             android:id="@+id/imb23"
-            android:onClick="revelarCarta"/>
+            android:onClick="revelarCarta"
+            android:layout_width="@dimen/largura"
+            android:layout_height="@dimen/altura"
+            android:scaleType="center" />
         <ImageButton
             android:src="@drawable/interrogacao"
             android:id="@+id/imb24"
-            android:onClick="revelarCarta"/>
+            android:onClick="revelarCarta"
+            android:layout_width="@dimen/largura"
+            android:layout_height="@dimen/altura"
+            android:scaleType="center" />
         <ImageButton
             android:src="@drawable/interrogacao"
             android:id="@+id/imb25"
-            android:onClick="revelarCarta"/>
+            android:onClick="revelarCarta"
+            android:layout_height="@dimen/altura"
+            android:layout_width="@dimen/largura"
+            android:scaleType="center" />
     </TableRow>
 
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:gravity="bottom|center_horizontal">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:columnCount="4"
+        android:rowCount="2">
+        <ImageButton
+            android:src="@drawable/jogador1"
+            android:id="@+id/invocador1"
+            android:layout_width="@dimen/largura"
+            android:layout_height="@dimen/altura"
+            android:scaleType="center" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/nomeJogador"
-            android:id="@+id/TextNomeJogador"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/nomeJogador" />
+        <ImageButton
+            android:src="@drawable/jogador3"
+            android:id="@+id/invocador3"
+            android:layout_width="@dimen/largura"
+            android:layout_height="@dimen/altura"
+            android:scaleType="center"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentStart="true" />
+
+        <ImageButton
+            android:src="@drawable/jogador4"
+            android:id="@+id/invocador4"
+            android:layout_width="@dimen/largura"
+            android:layout_height="@dimen/altura"
+            android:scaleType="center"
+            android:layout_alignTop="@+id/invocador3"
+            android:layout_alignParentEnd="true" />
+
+        <ImageButton
+            android:src="@drawable/jogador2"
+            android:id="@+id/invocador2"
+            android:layout_width="@dimen/largura"
+            android:layout_height="@dimen/altura"
+            android:scaleType="center"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceMedium"
-            android:id="@+id/textnome" />
+            android:text="nome"
+            android:id="@+id/player"
+            android:layout_above="@+id/invocador3"
+            android:layout_toEndOf="@+id/invocador1"
+            android:textColor="@color/dadosJogadores" />
 
-    </LinearLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="nome3"
+            android:id="@+id/player3"
+            android:layout_alignParentBottom="true"
+            android:layout_toEndOf="@+id/invocador3"
+            android:layout_marginBottom="10dp"
+            android:textColor="@color/dadosJogadores" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="pontos3"
+            android:id="@+id/pts3"
+            android:layout_below="@+id/invocador1"
+            android:layout_toEndOf="@+id/invocador1"
+            android:textColor="@color/dadosJogadores" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="nome4"
+            android:id="@+id/player4"
+            android:layout_alignBottom="@+id/player3"
+            android:layout_toStartOf="@+id/invocador4"
+            android:textColor="@color/dadosJogadores" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="pontos4"
+            android:id="@+id/pts4"
+            android:layout_below="@+id/invocador2"
+            android:layout_toStartOf="@+id/invocador4"
+            android:textColor="@color/dadosJogadores" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="pontos1"
+            android:id="@+id/pts"
+            android:layout_above="@+id/player"
+            android:layout_toEndOf="@+id/invocador1"
+            android:layout_marginBottom="9dp"
+            android:textColor="@color/dadosJogadores" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="nome2"
+            android:id="@+id/player2"
+            android:layout_above="@+id/invocador4"
+            android:layout_toStartOf="@+id/invocador4"
+            android:textColor="@color/dadosJogadores" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="pontos2"
+            android:id="@+id/pts2"
+            android:layout_alignTop="@+id/pts"
+            android:layout_toStartOf="@+id/invocador2"
+            android:textColor="@color/dadosJogadores" />
+
+    </RelativeLayout>
 
 
 </TableLayout>

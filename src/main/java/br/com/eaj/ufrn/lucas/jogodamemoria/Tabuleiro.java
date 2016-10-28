@@ -1,4 +1,4 @@
-package br.com.eaj.ufrn.lucas.jogodamemoria;
+package br.com.ufrn.eaj.tads.lucasbernardo.jogodamemoria;
 
 import android.util.Log;
 import android.view.View;

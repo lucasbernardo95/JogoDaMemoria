@@ -1,4 +1,4 @@
-package br.com.eaj.ufrn.lucas.jogodamemoria;
+package br.com.ufrn.eaj.tads.lucasbernardo.jogodamemoria;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -10,6 +10,7 @@ import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.Toast;
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class SelecaoJogadoresActivity extends AppCompatActivity {
 
@@ -96,8 +97,10 @@ public class SelecaoJogadoresActivity extends AppCompatActivity {
             if(!nome4.equals(""))
                 jogadores.add( new Jogador(nome4));
 
-            //Adiciona a intent o array contendo os nomes dos jogadores
-            intent.putParcelableArrayListExtra("jogadores", jogadores);
+            //Embaralha a ordem dos jogadores para definir uma sequêscia aleatória em que esses irão jogar
+            Collections.shuffle(jogadores);
+            //Adiciona à intent o array que contém os jogadores
+            intent.putExtra("jogadores", jogadores);
 
             //Inicia a próxima activity passando a intent com o pacote contendo os nomes dos jogadores
             startActivity(intent);
@@ -109,8 +112,12 @@ public class SelecaoJogadoresActivity extends AppCompatActivity {
 
     }
 
-    protected void fechar(View view){
-
+    /**
+     * Esse método pe chamado sempre que o botão sair for clicado. Ele destroy a activity atual através
+     * do método finish.
+     */
+    public void fechar(View view){
+        finish();
     }
 
     @Override
